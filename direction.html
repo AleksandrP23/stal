@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>Бойцовский клуб «Сталь»</title>
+  <link rel="preload" href="fonts/Baloo2Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Baloo2Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Baloo2ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Baloo2Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Baloo2SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/UbuntuBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/UbuntuMedium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/UbuntuRegular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU"></script>
+  <script defer src="js/main.js"></script>
+</head>
+
+<body class="page__body">
+  <div class="site-container">
+    <header class="header">
+  <div class="container">
+    <div class="header__content">
+      <a href="/" class="logo header__logo">
+        <img src="../img/logo.svg" class="image" width="211" height="60" alt="Логотип " Сталь">
+      </a>
+      <div class="contacts header__contacts">
+        <a href="tel:+78314232363" class="contacts__tel">
+          <span class="contacts__text">клуб на Лескова</span>
+          <span class="contacts__tel-text">+7 (831-42) 3-23-63</span>
+        </a>
+        <a href="tel:+79159025555" class="contacts__tel">
+          <span class="contacts__text">клуб на Белинского</span>
+          <span class="contacts__tel-text">+7 915 902-55-55</span>
+        </a>
+      </div>
+      <ul class="list-reset social">
+        <li class="social__item social__item--tel">
+          <button class="btn-reset social__link" aria-label="Наши телефоны">
+            <svg width="40" height="40" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M21.7125 3.65983C16.8302 -1.22098 8.91563 -1.2198 4.03483 3.66251C-0.845976 8.54483 -0.844804 16.4594 4.03751 21.3402C8.91983 26.221 16.8344 26.2198 21.7152 21.3375C22.8757 20.1766 23.7963 18.7985 24.4242 17.2818C25.0522 15.7651 25.3752 14.1396 25.375 12.4981C25.3748 10.8566 25.0512 9.23118 24.4228 7.71471C23.7944 6.19823 22.8734 4.82038 21.7125 3.65983ZM19.3058 17.4123L19.3041 17.414V17.4099L18.6708 18.039C18.2681 18.4468 17.767 18.7439 17.2159 18.9016C16.6648 19.0592 16.0824 19.0721 15.5249 18.939C14.3827 18.6332 13.2967 18.1465 12.3083 17.4974C11.39 16.9105 10.5391 16.2244 9.77081 15.4515C9.06395 14.7498 8.42885 13.9793 7.87496 13.1515C7.26911 12.2608 6.78955 11.2905 6.44996 10.2682C6.25909 9.67933 6.23594 9.04898 6.38313 8.44773C6.53032 7.84649 6.84202 7.2981 7.28331 6.86402L8.02496 6.12237C8.23116 5.91524 8.56622 5.91451 8.7733 6.12071L8.77496 6.12237L11.1166 8.46402C11.3237 8.67022 11.3245 9.00528 11.1183 9.21236L11.1166 9.21402L9.74161 10.589C9.34708 10.9793 9.29747 11.5994 9.62496 12.0474C10.1223 12.7299 10.6726 13.3721 11.2708 13.9682C11.9378 14.638 12.6628 15.2474 13.4375 15.7891C13.8851 16.1013 14.4919 16.0486 14.8791 15.6641L16.2083 14.3141C16.4145 14.1069 16.7495 14.1062 16.9566 14.3124L16.9582 14.3141L19.3041 16.6641C19.5113 16.8702 19.512 17.2052 19.3058 17.4123Z" />
+            </svg>
+          </button>
+        </li>
+        <li class="social__item">
+          <a href="#" target="_blank" class="social__link" aria-label="Наш телеграмм">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20 40C31.0483 40 40 31.0483 40 20C40 8.95167 31.0483 0 20 0C8.95167 0 0 8.95167 0 20C0 31.0483 8.95167 40 20 40ZM9.15167 19.5667L28.435 12.1317C29.33 11.8083 30.1117 12.35 29.8217 13.7033L29.8233 13.7017L26.54 29.17C26.2967 30.2667 25.645 30.5333 24.7333 30.0167L19.7333 26.3317L17.3217 28.655C17.055 28.9217 16.83 29.1467 16.3133 29.1467L16.6683 24.0583L25.935 15.6867C26.3383 15.3317 25.845 15.1317 25.3133 15.485L13.8617 22.695L8.925 21.155C7.85333 20.815 7.83 20.0833 9.15167 19.5667Z" />
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="#" target="_blank" class="social__link" aria-label="Наша страничка во Вконтакте">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <button class="btn-reset burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
+        <span class="burger__line"></span>
+      </button>
+      <!-- <nav class="nav" title="Меню" data-menu>
+        <ul class="list-reset nav__list">
+          <li class="nav__item"><a href="#" class="nav__link">О клубе</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Направления</a>
+            <ul class="list-reset nav__sub">
+              <li class="nav__item"><a href="#" class="nav__link">СБЕ ММА</a>
+              <li class="nav__item"><a href="#" class="nav__link">Панкратион</a>
+              <li class="nav__item"><a href="#" class="nav__link">Тайский бокс</a>
+              <li class="nav__item"><a href="#" class="nav__link">Бокс</a>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="#" class="nav__link">Мероприятия</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Полезное</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Магазин товаров</a></li>
+        </ul>
+      </nav> -->
+      <div class="header__nav">
+        <nav class="nav" aria-label="Сайт" data-menu>
+          <ul class="list-reset menu nav__list">
+            <li class="menu__item nav__item">
+              <a href="#" class="menu__link nav__link">О клубе</a>
+            </li>
+            <li class="menu__item nav__item" data-has-children>
+              <span data-controls="doka-submenu">Направления</span>
+
+              <ul class="list-reset menu menu-submenu" id="doka-submenu">
+                <li class="menu__item nav__item">
+                  <a href="#" class="menu__link nav__link" aria-current="page">СБЕ ММА</a>
+                </li>
+                <li class="menu__item nav__item">
+                  <a href="#" class="menu__link nav__link">Панкратион</a>
+                </li>
+                <li class="menu__item nav__item">
+                  <a href="#" class="menu__link nav__link">Тайский бокс</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu__item nav__item">
+              <a href="#" class="menu__link nav__link">Мероприятия</a>
+            </li>
+            <li class="menu__item nav__item">
+              <a href="#" class="menu__link nav__link">Полезное</a>
+            </li>
+            <li class="menu__item nav__item">
+              <a href="#" class="menu__link nav__link">Контакты</a>
+            </li>
+            <li class="menu__item nav__item">
+              <a href="#" class="menu__link nav__link">Магазин товаров</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <main class="main">
+      <div class="breadcrumbs">
+  <div class="container">
+    <ul class="list-reset breadcrumbs__list">
+      <li class="breadcrumbs__item">
+        <a href="/" class="breadcrumbs__link">Главная</a>
+      </li>
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link">Наши мероприятия</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+      <section class="hero-direction">
+  <div class="container">
+    <div class="hero-direction__pic">
+      <h1 class="hero-direction__pic-title">СБЕ ММА</h1>
+      <img src="../img/hero-direction.png" class="hero-direction__pic-img" width="605" height="425">
+    </div>
+    <div class="hero-direction__content">
+      <h2 class="hero-direction__title">Посещая наши тренировки ты:</h2>
+      <ul class="list-reset grid hero-direction__list">
+        <li class="hero-direction__item">
+          <div class="hero-direction__descr">
+            <img loading="lazy" src="../img/hero-direction-1.svg" class="image" width="60" height="60" alt="">
+            <h3 class="hero-direction__subtitle">Повысишь уровень самооценки </h3>
+          </div>
+          <p>Научишься контролировать свои эмоции и принимать взвешенные решения. Уверенность в себе, которую дают
+            тренировки, помогут в реальной жизни.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+      <section class="section-video">
+  <div class="container">
+    <div class="video" data-video="https://youtu.be/SAvyuldB6ko">
+      <img src="" alt="video" class="video__img">
+      <button class="video-play btn-reset">
+        <svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="video-play-icon"
+            d="M45.7566 7.61719C24.6895 7.61719 7.6261 24.6606 7.6261 45.7031C7.6261 66.7456 24.6895 83.7891 45.7566 83.7891C66.8237 83.7891 83.8871 66.7456 83.8871 45.7031C83.8871 24.6606 66.8237 7.61719 45.7566 7.61719ZM38.1305 62.8418V28.5645L61.0088 45.7031L38.1305 62.8418Z"
+            fill="#D10C35" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+      <section class="team-direction">
+  <div class="container">
+    <h2 class="team-direction__title">С тобой будут работать высококлассные тренеры</h2>
+    <div class="swiper team-direction__slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="team-direction__slide">
+            <div class="team-direction__img">
+              <img loading="lazy" src="../img/team-1.png" class="image" width="440" height="450" alt="Картинка">
+            </div>
+            <div class="team-direction__content">
+              <div class="team-direction__name">Гамидов Талех</div>
+              <div class="team-direction__text">Достижения</div>
+              <ul class="team-direction__list">
+                <li class="team-direction__item">МКС по комплексным единоборствам</li>
+                <li class="team-direction__item">МКС по Армейскому рукопашному бою</li>
+                <li class="team-direction__item">МКС по Армейскому рукопашному бою</li>
+                <li class="team-direction__item">МКС по боксу</li>
+                <li class="team-direction__item">Действующий профессиональный боец ММА</li>
+                <li class="team-direction__item">Многократный чемпион соревнований по СБЕ ММА, панкратиону, грэпплингу, КЕ и боксу</li>
+              </ul>
+              <div class="team-direction__text">Тренировки</div>
+              <ul class="team-direction__list">
+                <li class="team-direction__item">СБЕ ММА</li>
+                  <li class="team-direction__item">Панкратион</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="team-direction__slide">
+            <div class="team-direction__img">
+              <img loading="lazy" src="../img/team-1.png" class="image" width="440" height="450" alt="Картинка">
+            </div>
+            <div class="team-direction__content">
+              <div class="team-direction__name">Гамидов Талех</div>
+              <div class="team-direction__text">Достижения</div>
+              <ul class="team-direction__list">
+                <li class="team-direction__item">МКС по комплексным единоборствам</li>
+                <li class="team-direction__item">МКС по Армейскому рукопашному бою</li>
+                <li class="team-direction__item">МКС по Армейскому рукопашному бою</li>
+                <li class="team-direction__item">МКС по боксу</li>
+                <li class="team-direction__item">Действующий профессиональный боец ММА</li>
+                <li class="team-direction__item">Многократный чемпион соревнований по СБЕ ММА, панкратиону, грэпплингу, КЕ и боксу</li>
+              </ul>
+              <div class="team-direction__text">Тренировки</div>
+              <ul class="team-direction__list">
+                <li class="team-direction__item">СБЕ ММА</li>
+                  <li class="team-direction__item">Панкратион</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="team-direction__slide">
+            <div class="team-direction__img">
+              <img loading="lazy" src="../img/team-1.png" class="image" width="440" height="450" alt="Картинка">
+            </div>
+            <div class="team-direction__content">
+              <div class="team-direction__name">Гамидов Талех</div>
+              <div class="team-direction__text">Достижения</div>
+              <ul class="team-direction__list">
+                <li class="team-direction__item">МКС по комплексным единоборствам</li>
+                <li class="team-direction__item">МКС по Армейскому рукопашному бою</li>
+                <li class="team-direction__item">МКС по Армейскому рукопашному бою</li>
+                <li class="team-direction__item">МКС по боксу</li>
+                <li class="team-direction__item">Действующий профессиональный боец ММА</li>
+                <li class="team-direction__item">Многократный чемпион соревнований по СБЕ ММА, панкратиону, грэпплингу, КЕ и боксу</li>
+              </ul>
+              <div class="team-direction__text">Тренировки</div>
+              <ul class="team-direction__list">
+                <li class="team-direction__item">СБЕ ММА</li>
+                  <li class="team-direction__item">Панкратион</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="team-direction__slide">
+            <div class="team-direction__img">
+              <img loading="lazy" src="../img/team-1.png" class="image" width="440" height="450" alt="Картинка">
+            </div>
+            <div class="team-direction__content">
+              <div class="team-direction__name">Гамидов Талех</div>
+              <div class="team-direction__text">Достижения</div>
+              <ul class="team-direction__list">
+                <li class="team-direction__item">МКС по комплексным единоборствам</li>
+                <li class="team-direction__item">МКС по Армейскому рукопашному бою</li>
+                <li class="team-direction__item">МКС по Армейскому рукопашному бою</li>
+                <li class="team-direction__item">МКС по боксу</li>
+                <li class="team-direction__item">Действующий профессиональный боец ММА</li>
+                <li class="team-direction__item">Многократный чемпион соревнований по СБЕ ММА, панкратиону, грэпплингу, КЕ и боксу</li>
+              </ul>
+              <div class="team-direction__text">Тренировки</div>
+              <ul class="team-direction__list">
+                <li class="team-direction__item">СБЕ ММА</li>
+                  <li class="team-direction__item">Панкратион</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination team-direction__slider-pagination"></div>
+    </div>
+  </div>
+</section>
+
+      <section class="reviews">
+  <div class="container">
+    <h2 class="reviews__title">Вот что о нас говорят тренирующиеся</h2>
+    <div class="grid reviews__content">
+      <div class="video reviews__video" data-video="https://youtu.be/SAvyuldB6ko">
+        <img src="" alt="video" class="video__img">
+        <button class="video-play btn-reset">
+          <svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="video-play-icon"
+              d="M45.7566 7.61719C24.6895 7.61719 7.6261 24.6606 7.6261 45.7031C7.6261 66.7456 24.6895 83.7891 45.7566 83.7891C66.8237 83.7891 83.8871 66.7456 83.8871 45.7031C83.8871 24.6606 66.8237 7.61719 45.7566 7.61719ZM38.1305 62.8418V28.5645L61.0088 45.7031L38.1305 62.8418Z"
+              fill="#D10C35" />
+          </svg>
+        </button>
+      </div>
+      <div class="video reviews__video" data-video="https://youtu.be/SAvyuldB6ko">
+        <img src="" alt="video" class="video__img">
+        <button class="video-play btn-reset">
+          <svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="video-play-icon"
+              d="M45.7566 7.61719C24.6895 7.61719 7.6261 24.6606 7.6261 45.7031C7.6261 66.7456 24.6895 83.7891 45.7566 83.7891C66.8237 83.7891 83.8871 66.7456 83.8871 45.7031C83.8871 24.6606 66.8237 7.61719 45.7566 7.61719ZM38.1305 62.8418V28.5645L61.0088 45.7031L38.1305 62.8418Z"
+              fill="#D10C35" />
+          </svg>
+        </button>
+      </div>
+      <div class="video reviews__video" data-video="https://youtu.be/SAvyuldB6ko">
+        <img src="" alt="video" class="video__img">
+        <button class="video-play btn-reset">
+          <svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="video-play-icon"
+              d="M45.7566 7.61719C24.6895 7.61719 7.6261 24.6606 7.6261 45.7031C7.6261 66.7456 24.6895 83.7891 45.7566 83.7891C66.8237 83.7891 83.8871 66.7456 83.8871 45.7031C83.8871 24.6606 66.8237 7.61719 45.7566 7.61719ZM38.1305 62.8418V28.5645L61.0088 45.7031L38.1305 62.8418Z"
+              fill="#D10C35" />
+          </svg>
+        </button>
+      </div>
+      <div class="video reviews__video" data-video="https://youtu.be/SAvyuldB6ko">
+        <img src="" alt="video" class="video__img">
+        <button class="video-play btn-reset">
+          <svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="video-play-icon"
+              d="M45.7566 7.61719C24.6895 7.61719 7.6261 24.6606 7.6261 45.7031C7.6261 66.7456 24.6895 83.7891 45.7566 83.7891C66.8237 83.7891 83.8871 66.7456 83.8871 45.7031C83.8871 24.6606 66.8237 7.61719 45.7566 7.61719ZM38.1305 62.8418V28.5645L61.0088 45.7031L38.1305 62.8418Z"
+              fill="#D10C35" />
+          </svg>
+        </button>
+      </div>
+      <div class="video reviews__video" data-video="https://youtu.be/SAvyuldB6ko">
+        <img src="" alt="video" class="video__img">
+        <button class="video-play btn-reset">
+          <svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="video-play-icon"
+              d="M45.7566 7.61719C24.6895 7.61719 7.6261 24.6606 7.6261 45.7031C7.6261 66.7456 24.6895 83.7891 45.7566 83.7891C66.8237 83.7891 83.8871 66.7456 83.8871 45.7031C83.8871 24.6606 66.8237 7.61719 45.7566 7.61719ZM38.1305 62.8418V28.5645L61.0088 45.7031L38.1305 62.8418Z"
+              fill="#D10C35" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="training">
+  <div class="container">
+    <h2 class="training__title">Расписание тренировок</h2>
+    <div class="tabs" data-tabs="training">
+      <ul class="list-reset tabs__nav">
+        <li class="tabs__nav-item"><button class="btn-reset tabs__nav-btn" type="button">Клуб на
+            Лескова</button></li>
+        <li class="tabs__nav-item"><button class="btn-reset tabs__nav-btn" type="button">Клуб на
+            Белинского</button>
+        </li>
+      </ul>
+      <div class="tabs__content">
+        <div class="tabs__panel">
+          <div class="table">
+            <div class="table__name">Детская группа</div>
+            <div class="table__days">
+              <div class="table__column">
+                <div class="table__row">
+                  <div class="table__header">
+                    пн
+                  </div>
+                  <span class="table__text">18:00 — 19:00
+                    Гамидов Талех</span>
+                </div>
+              </div>
+              <div class="table__column">
+                <div class="table__row">
+                  <div class="table__header">
+                    пн
+                  </div>
+                  <span class="table__text">18:00 — 19:00
+                    Гамидов Талех</span>
+                </div>
+              </div>
+              <div class="table__column">
+                <div class="table__row">
+                  <div class="table__header">
+                    пн
+                  </div>
+                  <span class="table__text">18:00 — 19:00
+                    Гамидов Талех</span>
+                </div>
+              </div>
+              <div class="table__column">
+                <div class="table__row">
+                  <div class="table__header">
+                    пн
+                  </div>
+                  <span class="table__text">18:00 — 19:00
+                    Гамидов Талех</span>
+                </div>
+              </div>
+              <div class="table__column">
+                <div class="table__row">
+                  <div class="table__header">
+                    пн
+                  </div>
+                  <span class="table__text">18:00 — 19:00
+                    Гамидов Талех</span>
+                </div>
+              </div>
+              <div class="table__column">
+                <div class="table__row">
+                  <div class="table__header">
+                    пн
+                  </div>
+                  <span class="table__text">18:00 — 19:00
+                    Гамидов Талех</span>
+                </div>
+              </div>
+              <div class="table__column">
+                <div class="table__row">
+                  <div class="table__header">
+                    пн
+                  </div>
+                  <span class="table__text">18:00 — 19:00
+                    Гамидов Талех</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="training__info">
+            В СУББОТУ СПАРРИНГИ ПО ММА В 11:30 (ЮНИОРЫ 12-17 ЛЕТ)
+          </div>
+          <div class="training__dop-info">
+            В воскресенье персональные тренировки по договоренности
+          </div>
+        </div>
+        <div class="tabs__panel">
+          <div class="table">
+            <div class="table__name">Детская группа</div>
+            <div class="table__days">
+              <div class="table__column">
+                <div class="table__row">
+                  <div class="table__header">
+                    пн
+                  </div>
+                  <span class="table__text">18:00 — 19:00
+                    Гамидов Талех</span>
+                </div>
+              </div>
+              <div class="table__column">
+                <div class="table__row">
+                  <div class="table__header">
+                    пн
+                  </div>
+                  <span class="table__text">18:00 — 19:00
+                    Гамидов Талех</span>
+                </div>
+              </div>
+              <div class="table__column">
+                <div class="table__row">
+                  <div class="table__header">
+                    пн
+                  </div>
+                  <span class="table__text">18:00 — 19:00
+                    Гамидов Талех</span>
+                </div>
+              </div>
+              <div class="table__column">
+                <div class="table__row">
+                  <div class="table__header">
+                    пн
+                  </div>
+                  <span class="table__text">18:00 — 19:00
+                    Гамидов Талех</span>
+                </div>
+              </div>
+              <div class="table__column">
+                <div class="table__row">
+                  <div class="table__header">
+                    пн
+                  </div>
+                  <span class="table__text">18:00 — 19:00
+                    Гамидов Талех</span>
+                </div>
+              </div>
+              <div class="table__column">
+                <div class="table__row">
+                  <div class="table__header">
+                    пн
+                  </div>
+                  <span class="table__text">18:00 — 19:00
+                    Гамидов Талех</span>
+                </div>
+              </div>
+              <div class="table__column">
+                <div class="table__row">
+                  <div class="table__header">
+                    пн
+                  </div>
+                  <span class="table__text">18:00 — 19:00
+                    Гамидов Талех</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="membership">
+  <div class="container">
+    <h2 class="membership__title">Абонементы</h2>
+    <div class="tabs membership__tabs" data-tabs="membership">
+      <ul class="list-reset tabs__nav">
+        <li class="tabs__nav-item"><button class="btn-reset tabs__nav-btn tabs__nav-btn--dark" type="button">Клуб на
+            Лескова</button></li>
+        <li class="tabs__nav-item"><button class="btn-reset tabs__nav-btn tabs__nav-btn--dark" type="button">Клуб на
+            Белинского</button>
+        </li>
+      </ul>
+      <div class="tabs__content">
+        <div class="tabs__panel">
+          <div class="grid membership__content">
+            <div class="membership__card">
+              <div class="membership__card-content">
+                <div class="membership__date">1 месяц</div>
+                <ul class="list-reset membership__list">
+                  <li class="membership__item">для детей</li>
+                  <li class="membership__item">для юниоров</li>
+                  <li class="membership__item">для взрослых</li>
+                </ul>
+                <span class="membership__price">3 800 ₽</span>
+                <button class="btn-reset btn">Купить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs__panel">
+          2
+        </div>
+      </div>
+    </div>
+    <div class="membership__text">
+      <p>ММА — что за вид спорта? Представьте, что в одной комнате собрались боксёры, каратисты, борцы, самбисты, дзюдоисты, бойцы из муай-тая, джиу-джитсу и кикбоксинга. Обстановка напряжена: эти крепкие парни и девушки хотели бы выяснить в бою, кто из них сильнее. Но чтобы это сделать, они должны набраться опыта друг у друга. По-другому не получится.
+      </p>
+    </div>
+  </div>
+</section>
+
+      <section class="contact-section">
+  <div class="container">
+    <h2 class="title">Контакты</h2>
+    <ul class="list-reset social contact-section__list">
+      <li class="social__item">
+        <a href="#" target="_blank" class="social__link" aria-label="Наш телеграмм">
+          <svg width="60" height="60" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20 40C31.0483 40 40 31.0483 40 20C40 8.95167 31.0483 0 20 0C8.95167 0 0 8.95167 0 20C0 31.0483 8.95167 40 20 40ZM9.15167 19.5667L28.435 12.1317C29.33 11.8083 30.1117 12.35 29.8217 13.7033L29.8233 13.7017L26.54 29.17C26.2967 30.2667 25.645 30.5333 24.7333 30.0167L19.7333 26.3317L17.3217 28.655C17.055 28.9217 16.83 29.1467 16.3133 29.1467L16.6683 24.0583L25.935 15.6867C26.3383 15.3317 25.845 15.1317 25.3133 15.485L13.8617 22.695L8.925 21.155C7.85333 20.815 7.83 20.0833 9.15167 19.5667Z"
+               />
+          </svg>
+        </a>
+      </li>
+      <li class="social__item">
+        <a href="#" target="_blank" class="social__link" aria-label="Наша страничка во Вконтакте">
+          <svg width="60" height="60" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z"
+              " />
+          </svg>
+        </a>
+      </li>
+      <li class="social__item">
+        <a href="#" target="_blank" class="social__link" aria-label="Наша страничка в Ютубе">
+          <svg width="60" height="60" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_51_931)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M20.8333 40C31.8789 40 40.8333 31.0456 40.8333 20C40.8333 8.9544 31.8789 0 20.8333 0C9.78773 0 0.833328 8.9544 0.833328 20C0.833328 31.0456 9.78773 40 20.8333 40ZM27.9933 13.0504C29.5285 13.1888 30.3933 14.1284 30.5829 15.6256C30.7157 16.6704 30.8333 18.1664 30.8333 19.7756C30.8333 22.6012 30.5829 24.2348 30.5829 24.2348C30.3477 25.726 29.6269 26.5356 28.1109 26.7068C26.4169 26.8988 22.6069 26.9868 20.9141 26.9868C19.1621 26.9868 15.6193 26.9132 13.8501 26.766C12.3301 26.6392 11.2925 25.79 11.0837 24.2788C10.9317 23.178 10.8333 21.87 10.8333 19.79C10.8333 17.4748 10.9169 16.4948 11.1133 15.4488C11.3929 13.956 12.1053 13.2328 13.7325 13.0648C15.4397 12.8884 17.0533 12.8 20.6641 12.8C22.4293 12.8 26.2353 12.8912 27.9933 13.0504ZM18.7069 16.9548V22.7044L24.1813 19.8L18.7069 16.9548Z" />
+            </g>
+            <defs>
+              <clipPath id="clip0_51_931">
+                <rect width="40" height="40" fill="white" transform="translate(0.833328)" />
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <div class="maps">
+      <div class="maps__content">
+        <h3 class="maps__title">Клуб на <span class="maps__title-color">Лескова</span></h3>
+         <ul class="list-reset maps__list">
+          <li class="maps__item">
+            <svg class="maps__svg">
+              <use xlink:href="img/sprite.svg#component-1"></use>
+            </svg>
+            <span class="maps__text">Нижний Новгород, ул. Лескова 9Б</span>
+          </li>
+          <li class="maps__item">
+            <svg class="maps__svg">
+              <use xlink:href="img/sprite.svg#component-2"></use>
+            </svg>
+            <a href="tel:+78314232363" class="maps__text">+7 (831-42) 3-23-63</a>
+          </li>
+          <li class="maps__item">
+            <svg class="maps__svg">
+              <use xlink:href="img/sprite.svg#component-3"></use>
+            </svg>
+            <a href="mailto:klubstal@mail.ru" class="maps__text">klubstal@mail.ru</a>
+          </li>
+          <li class="maps__item">
+            <svg class="maps__svg">
+              <use xlink:href="img/sprite.svg#component-4"></use>
+            </svg>
+            <span class="maps__text">Пн — Вс: 8:30 до 21:30</span>
+          </li>
+         </ul>
+      </div>
+      <div id="map" class="map"></div>
+    </div>
+    <div class="maps">
+      <div class="maps__content">
+        <h3 class="maps__title">Клуб на <span class="maps__title-color">Белинского</span></h3>
+         <ul class="list-reset maps__list">
+          <li class="maps__item">
+            <svg class="maps__svg">
+              <use xlink:href="img/sprite.svg#component-1"></use>
+            </svg>
+            <span class="maps__text">Нижний Новгород, ул. Белинского 124</span>
+          </li>
+          <li class="maps__item">
+            <svg class="maps__svg">
+              <use xlink:href="img/sprite.svg#component-2"></use>
+            </svg>
+            <a href="tel:+79159025555" class="maps__text">+7 915 902-55-55</a>
+          </li>
+          <li class="maps__item">
+            <svg class="maps__svg">
+              <use xlink:href="img/sprite.svg#component-3"></use>
+            </svg>
+            <a href="mailto:klubstal@mail.ru" class="maps__text">klubstal@mail.ru</a>
+          </li>
+          <li class="maps__item">
+            <svg class="maps__svg">
+              <use xlink:href="img/sprite.svg#component-4"></use>
+            </svg>
+            <span class="maps__text">Пн — Вс: 8:30 до 21:30</span>
+          </li>
+         </ul>
+      </div>
+      <div id="map1" class="map"></div>
+    </div>
+  </div>
+</section>
+
+    </main>
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a href="/" class="footer__logo">
+        <img loading="lazy" src="../img/logo-footer.svg" class="image" width="175" height="50" alt="Логотип">
+      </a>
+      <ul class="list-reset social">
+        <li class="social__item">
+          <a href="#" target="_blank" class="social__link social__link--color" aria-label="Наша страничка во Вконтакте">
+            <svg width="60" height="60" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M20 40C31.0456 40 40 31.0456 40 20C40 8.9544 31.0456 0 20 0C8.9544 0 0 8.9544 0 20C0 31.0456 8.9544 40 20 40ZM10 13.6C10.1624 21.3952 14.06 26.08 20.8932 26.08H21.2804V21.62C23.7916 21.87 25.69 23.7064 26.4524 26.08H30C29.0256 22.532 26.4648 20.5708 24.8656 19.8212C26.4648 18.8968 28.7132 16.648 29.2504 13.6H26.0272C25.3276 16.0736 23.2544 18.322 21.2804 18.5344V13.6H18.0576V22.2444C16.0588 21.7448 13.5352 19.3216 13.4224 13.6H10Z"
+                 />
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="#" target="_blank" class="social__link social__link--color" aria-label="Наша страничка в Ютубе">
+            <svg width="60" height="60" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_51_931)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.8333 40C31.8789 40 40.8333 31.0456 40.8333 20C40.8333 8.9544 31.8789 0 20.8333 0C9.78773 0 0.833328 8.9544 0.833328 20C0.833328 31.0456 9.78773 40 20.8333 40ZM27.9933 13.0504C29.5285 13.1888 30.3933 14.1284 30.5829 15.6256C30.7157 16.6704 30.8333 18.1664 30.8333 19.7756C30.8333 22.6012 30.5829 24.2348 30.5829 24.2348C30.3477 25.726 29.6269 26.5356 28.1109 26.7068C26.4169 26.8988 22.6069 26.9868 20.9141 26.9868C19.1621 26.9868 15.6193 26.9132 13.8501 26.766C12.3301 26.6392 11.2925 25.79 11.0837 24.2788C10.9317 23.178 10.8333 21.87 10.8333 19.79C10.8333 17.4748 10.9169 16.4948 11.1133 15.4488C11.3929 13.956 12.1053 13.2328 13.7325 13.0648C15.4397 12.8884 17.0533 12.8 20.6641 12.8C22.4293 12.8 26.2353 12.8912 27.9933 13.0504ZM18.7069 16.9548V22.7044L24.1813 19.8L18.7069 16.9548Z"  />
+              </g>
+              <defs>
+                <clipPath id="clip0_51_931">
+                  <rect width="40" height="40" fill="white" transform="translate(0.833328)" />
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <a href="/" class="footer__link">Политика конфиденциальности</a>
+      <a href="/" class="footer__link footer__link--tr">Информация на сайте не является публичной офетой, цены уточняйте у менеджеров</a>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__text">© Copyright 2023</span>
+      <span class="footer__text">Все права защищены</span>
+      <a href="/" class="footer__link footer__link--flex footer__text">
+        Разработка сайтов
+        <img loading="lazy" src="../img/logo-artix.svg" class="image" width="41" height="41" alt="Логотип artix">
+      </a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>
