@@ -241,10 +241,10 @@
       <form action="#" class="form">
         <h2 class="form__title">запишись на <span class="form__title-color">бесплатную тренировку</span> </h2>
         <label class="form__label">
-          <input type="text" name="Имя" class="input-reset form__input" placeholder="ФИО">
+          <input type="text" name="Имя" class="input-reset form__input input-name" placeholder="ФИО">
         </label>
         <label class="form__label">
-          <input type="tel" name="Телефон" class="input-reset form__input" placeholder="Телефон">
+          <input type="tel" name="Телефон" class="input-reset form__input input-tel" placeholder="Телефон">
         </label>
         <label class="form__label">
           <select name="insterested" class="form__select">
@@ -253,7 +253,7 @@
             <option value="Interior_Design">Бокс</option>
           </select>
         </label>
-        <button class="btn-reset btn form__btn">Записаться</button>
+        <button class="btn-reset btn form__btn" data-graph-path="product">Записаться</button>
         <span class="form__text">Нажимая на кнопку «Записаться» вы даете соглашение на обработку данных</span>
       </form>
     </div>
@@ -409,6 +409,28 @@
     </div>
   </div>
 </footer>
+
+    <div class="graph-modal forms-modal">
+  <div class="graph-modal__container forms-modal__container" role="dialog" aria-modal="true"
+    data-graph-target="product">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+
+      <form action="#" class="form">
+        <h2 class="form__title"><span class="form__title-color">Оставьте завку</span> </h2>
+        <div class="form__subtitle">Мы вам перезвоним в ближайшее время</div>
+        <label class="form__label">
+          <input type="text" name="Имя" class="input-reset form__input input-name" placeholder="ФИО">
+        </label>
+        <label class="form__label">
+          <input type="tel" name="Телефон" class="input-reset form__input input-tel" placeholder="Телефон">
+        </label>
+        <button class="btn-reset btn form__btn">Отправить</button>
+        <span class="form__text">Нажимая на кнопку «Отправить» вы даете соглашение на обработку данных</span>
+      </form>
+    </div>
+  </div>
+</div>
 
   </div>
 </body>
