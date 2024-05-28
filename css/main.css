@@ -531,7 +531,10 @@ a {
 .enhanced .menu .menu {
   position: absolute;
   left: 0;
-  top: 10%;
+  top: 100%;
+  z-index: 10;
+  width: 100%;
+  background: rgb(234, 234, 234);
   -webkit-padding-start: 0;
   padding-inline-start: 0;
 }
@@ -835,12 +838,13 @@ a {
 }
 
 .header {
+  position: fixed;
   left: 0;
   top: 0;
   z-index: 100;
   padding: 15px 0;
   width: 100%;
-  background-color: rgba(234, 234, 234, 0.7);
+  background-color: rgba(234, 234, 234, 0.9);
 }
 .header__content {
   position: relative;
@@ -3120,4 +3124,4 @@ a {
   .table__text {
     font-size: 15px;
   }
-}
+}/*# sourceMappingURL=main.css.map */
