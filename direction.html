@@ -69,6 +69,48 @@
       <button class="btn-reset burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
         <span class="burger__line"></span>
       </button>
+      <ul class="list-reset menu" data-menu>
+        <li class="menu__item">
+          <a href="#" class="menu__btn">О клубе</a>
+        </li>
+        <li class="menu__item">
+          <button class="btn-reset menu__btn">Направления
+            <svg
+           width="24px"
+           height="24px"
+           viewBox="0 0 24 24"
+           aria-hidden="true"
+           class="menu__btn-icon">
+         <path fill="currentColor" d="M5.64645 8.64645c.19526-.19527.51184-.19527.7071 0L12 14.2929l5.6464-5.64645c.1953-.19527.5119-.19527.7072 0 .1952.19526.1952.51184 0 .7071L12 15.7071 5.64645 9.35355c-.19527-.19526-.19527-.51184 0-.7071Z"></path>
+         </svg>
+          </button>
+          <div class="dropdown">
+            <ul class="dropdown__list list-reset">
+              <li class="dropdown__item">
+                <a href="#" class="dropdown__link">СБЕ ММА</a>
+              </li>
+              <li class="dropdown__item">
+                <a href="#" class="dropdown__link">Панкратион</a>
+              </li>
+              <li class="dropdown__item">
+                <a href="#" class="dropdown__link">Тайский бокс</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="menu__item">
+          <a href="#" class="menu__btn">Мероприятия</a>
+        </li>
+        <li class="menu__item">
+          <a href="#" class="menu__btn">Полезное</a>
+        </li>
+        <li class="menu__item">
+          <a href="#" class="menu__btn">Контакты</a>
+        </li>
+        <li class="menu__item">
+          <a href="#" class="menu__btn">Магазин товаров</a>
+        </li>
+      </ul>
       <!-- <nav class="nav" title="Меню" data-menu>
         <ul class="list-reset nav__list">
           <li class="nav__item"><a href="#" class="nav__link">О клубе</a></li>
@@ -86,11 +128,11 @@
           <li class="nav__item"><a href="#" class="nav__link">Магазин товаров</a></li>
         </ul>
       </nav> -->
-      <div class="header__nav">
+      <!-- <div class="header__nav">
         <nav class="nav" aria-label="Сайт" data-menu>
           <ul class="list-reset menu nav__list">
             <li class="menu__item nav__item">
-              <a href="#" class="menu__link nav__link">О клубе</a>
+              <a href="#" class="menu__link nav__link">О клубе</a>
             </li>
             <li class="menu__item nav__item" data-has-children>
               <span data-controls="doka-submenu">Направления</span>
@@ -122,7 +164,7 @@
             </li>
           </ul>
         </nav>
-      </div>
+      </div> -->
     </div>
   </div>
 </header>
@@ -197,12 +239,13 @@
                 <li class="team-direction__item">МКС по Армейскому рукопашному бою</li>
                 <li class="team-direction__item">МКС по боксу</li>
                 <li class="team-direction__item">Действующий профессиональный боец ММА</li>
-                <li class="team-direction__item">Многократный чемпион соревнований по СБЕ ММА, панкратиону, грэпплингу, КЕ и боксу</li>
+                <li class="team-direction__item">Многократный чемпион соревнований по СБЕ ММА, панкратиону, грэпплингу,
+                  КЕ и боксу</li>
               </ul>
               <div class="team-direction__text">Тренировки</div>
               <ul class="team-direction__list">
                 <li class="team-direction__item">СБЕ ММА</li>
-                  <li class="team-direction__item">Панкратион</li>
+                <li class="team-direction__item">Панкратион</li>
               </ul>
             </div>
           </div>
@@ -221,12 +264,13 @@
                 <li class="team-direction__item">МКС по Армейскому рукопашному бою</li>
                 <li class="team-direction__item">МКС по боксу</li>
                 <li class="team-direction__item">Действующий профессиональный боец ММА</li>
-                <li class="team-direction__item">Многократный чемпион соревнований по СБЕ ММА, панкратиону, грэпплингу, КЕ и боксу</li>
+                <li class="team-direction__item">Многократный чемпион соревнований по СБЕ ММА, панкратиону, грэпплингу,
+                  КЕ и боксу</li>
               </ul>
               <div class="team-direction__text">Тренировки</div>
               <ul class="team-direction__list">
                 <li class="team-direction__item">СБЕ ММА</li>
-                  <li class="team-direction__item">Панкратион</li>
+                <li class="team-direction__item">Панкратион</li>
               </ul>
             </div>
           </div>
@@ -245,12 +289,13 @@
                 <li class="team-direction__item">МКС по Армейскому рукопашному бою</li>
                 <li class="team-direction__item">МКС по боксу</li>
                 <li class="team-direction__item">Действующий профессиональный боец ММА</li>
-                <li class="team-direction__item">Многократный чемпион соревнований по СБЕ ММА, панкратиону, грэпплингу, КЕ и боксу</li>
+                <li class="team-direction__item">Многократный чемпион соревнований по СБЕ ММА, панкратиону, грэпплингу,
+                  КЕ и боксу</li>
               </ul>
               <div class="team-direction__text">Тренировки</div>
               <ul class="team-direction__list">
                 <li class="team-direction__item">СБЕ ММА</li>
-                  <li class="team-direction__item">Панкратион</li>
+                <li class="team-direction__item">Панкратион</li>
               </ul>
             </div>
           </div>
@@ -269,17 +314,20 @@
                 <li class="team-direction__item">МКС по Армейскому рукопашному бою</li>
                 <li class="team-direction__item">МКС по боксу</li>
                 <li class="team-direction__item">Действующий профессиональный боец ММА</li>
-                <li class="team-direction__item">Многократный чемпион соревнований по СБЕ ММА, панкратиону, грэпплингу, КЕ и боксу</li>
+                <li class="team-direction__item">Многократный чемпион соревнований по СБЕ ММА, панкратиону, грэпплингу,
+                  КЕ и боксу</li>
               </ul>
               <div class="team-direction__text">Тренировки</div>
               <ul class="team-direction__list">
                 <li class="team-direction__item">СБЕ ММА</li>
-                  <li class="team-direction__item">Панкратион</li>
+                <li class="team-direction__item">Панкратион</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
+      <div class="swiper-button-prev hero__slider-prev"></div>
+      <div class="swiper-button-next hero__slider-next"></div>
       <div class="swiper-pagination team-direction__slider-pagination"></div>
     </div>
   </div>
@@ -682,7 +730,7 @@
           </a>
         </li>
       </ul>
-      <a href="/" class="footer__link">Политика конфиденциальности</a>
+      <a href="/" class="footer__link footer__link--fl-shrink">Политика конфиденциальности</a>
       <a href="/" class="footer__link footer__link--tr">Информация на сайте не является публичной офетой, цены уточняйте у менеджеров</a>
     </div>
     <div class="footer__bottom">
@@ -701,7 +749,6 @@
     data-graph-target="product">
     <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
     <div class="graph-modal__content">
-
       <form action="#" class="form">
         <h2 class="form__title"><span class="form__title-color">Оставьте завку</span> </h2>
         <div class="form__subtitle">Мы вам перезвоним в ближайшее время</div>
@@ -714,6 +761,12 @@
         <button class="btn-reset btn form__btn">Отправить</button>
         <span class="form__text">Нажимая на кнопку «Отправить» вы даете соглашение на обработку данных</span>
       </form>
+    </div>
+  </div>
+  <div class="graph-modal__container forms-modal__container" role="dialog" aria-modal="true" data-graph-target="thx">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <h2 class="form__title form__title--mb">Спасибо что<span class="form__title-color">выбрали нас</span> </h2>
     </div>
   </div>
 </div>

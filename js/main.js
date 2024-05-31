@@ -12242,28 +12242,28 @@ if (selects) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-// // Получаем элемент с классом .social__item--tel
-// const telButton = document.querySelector('.social__item--tel');
+// Получаем элемент с классом .social__item--tel
+const telButton = document.querySelector('.social__item--tel');
 
-// // Получаем элемент с классом .header__contacts
-// const contactsBlock = document.querySelector('.header__contacts');
+// Получаем элемент с классом .header__contacts
+const contactsBlock = document.querySelector('.header__contacts');
 
-// // Флаг для отслеживания состояния блока .header__contacts
-// let isContactsVisible = false;
+// Флаг для отслеживания состояния блока .header__contacts
+let isContactsVisible = false;
 
-// // Добавляем обработчик события click на кнопку
-// telButton.addEventListener('click', () => {
-//   // Если блок .header__contacts скрыт, показываем его
-//   if (!isContactsVisible) {
-//     contactsBlock.classList.add('contacts--active');
-//     isContactsVisible = true;
-//   }
-//   // Если блок .header__contacts виден, скрываем его
-//   else {
-//     contactsBlock.classList.remove('contacts--active');
-//     isContactsVisible = false;
-//   }
-// });
+// Добавляем обработчик события click на кнопку
+telButton.addEventListener('click', () => {
+  // Если блок .header__contacts скрыт, показываем его
+  if (!isContactsVisible) {
+    contactsBlock.classList.add('contacts--active');
+    isContactsVisible = true;
+  }
+  // Если блок .header__contacts виден, скрываем его
+  else {
+    contactsBlock.classList.remove('contacts--active');
+    isContactsVisible = false;
+  }
+});
 
 /***/ }),
 
@@ -12342,7 +12342,7 @@ __webpack_require__.r(__webpack_exports__);
 // const submenus = document.querySelectorAll('.menu__item[data-has-children]');
 // const dropdowns = document.querySelectorAll('.menu__item[data-has-children] > .menu');
 
-// const icon = '<svg>...</svg>';
+const icon = '<svg>...</svg>';
 
 // // Находим подменю, заменяем в нём span на кнопку
 // submenus.forEach((item) => {
@@ -12426,90 +12426,152 @@ __webpack_require__.r(__webpack_exports__);
 // Если JavaScript-файл загружен, заменяем span на кнопки и вешаем дополнительные ARIA-атрибуты.
 //
 
-const nav = document.querySelector('.nav');
-nav.classList.add('enhanced');
-const submenus = document.querySelectorAll('.menu__item[data-has-children]');
-const dropdowns = document.querySelectorAll('.menu__item[data-has-children] > .menu');
-const icon = `
-      <svg
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        class="menu__btn-icon"
-      >
-      <path fill="currentColor" d="M5.64645 8.64645c.19526-.19527.51184-.19527.7071 0L12 14.2929l5.6464-5.64645c.1953-.19527.5119-.19527.7072 0 .1952.19526.1952.51184 0 .7071L12 15.7071 5.64645 9.35355c-.19527-.19526-.19527-.51184 0-.7071Z"></path>
-      </svg>
-    `;
+// const nav = document.querySelector('.nav')
+// nav.classList.add('enhanced')
 
-// Находим подменю, заменяем в нём span на кнопку
-submenus.forEach(item => {
-  const dropdown = item.querySelector(':scope > .menu');
-  dropdown.setAttribute('hidden', '');
-  const span = item.querySelector(':scope > span');
-  const text = span.innerText;
-  const ariaControlsId = span.dataset.controls;
-  const button = document.createElement('button');
+// const submenus = document.querySelectorAll('.menu__item[data-has-children]')
+// const dropdowns = document.querySelectorAll('.menu__item[data-has-children] > .menu')
 
-  // Добавляем класс и необходимые ARIA-атрибуты
-  button.classList.add('menu__btn');
-  button.setAttribute('aria-expanded', 'false');
-  button.setAttribute('aria-controls', ariaControlsId);
-  button.innerText = text;
+// const icon = `
+//   <svg
+//     width="24px"
+//     height="24px"
+//     viewBox="0 0 24 24"
+//     aria-hidden="true"
+//     class="menu__btn-icon"
+//   >
+//   <path fill="currentColor" d="M5.64645 8.64645c.19526-.19527.51184-.19527.7071 0L12 14.2929l5.6464-5.64645c.1953-.19527.5119-.19527.7072 0 .1952.19526.1952.51184 0 .7071L12 15.7071 5.64645 9.35355c-.19527-.19526-.19527-.51184 0-.7071Z"></path>
+//   </svg>
+// `
 
-  // Добавляем иконку к кнопке, чтобы визуально было понятно открыто меню или нет
-  button.innerHTML += icon;
-  span.replaceWith(button);
-  button.addEventListener('click', function (e) {
-    toggleDropdown(button, dropdown);
-  });
+// // Находим подменю, заменяем в нём span на кнопку
+// submenus.forEach((item) => {
+//   const dropdown = item.querySelector(':scope > .menu')
+//   dropdown.setAttribute('hidden', '')
 
-  // Обрабатываем нажатие на Esc
-  dropdown.addEventListener('keydown', e => {
-    e.stopImmediatePropagation();
-    if (e.keyCode === 27 && focusIsInside(dropdown)) {
-      toggleDropdown(button, dropdown);
-      button.focus();
-    }
-  }, false);
-});
-function toggleDropdown(button, dropdown) {
-  if (button.getAttribute('aria-expanded') === 'true') {
-    button.setAttribute('aria-expanded', 'false');
-    dropdown.setAttribute('hidden', '');
-  } else {
-    button.setAttribute('aria-expanded', 'true');
-    dropdown.removeAttribute('hidden');
-  }
-}
-function focusIsInside(element) {
-  return element.contains(document.activeElement);
-}
-function collapseDropdownsWhenTabbingOutsideNav(e) {
-  if (e.keyCode === 9 && !focusIsInside(nav)) {
-    dropdowns.forEach(function (dropdown) {
-      dropdown.setAttribute('hidden', '');
-      const btn = dropdown.parentNode.querySelector('button');
-      btn.setAttribute('aria-expanded', 'false');
+//   const span = item.querySelector(':scope > span')
+//   const text = span.innerText
+//   const ariaControlsId = span.dataset.controls
+
+//   const button = document.createElement('button')
+
+//   // Добавляем класс и необходимые ARIA-атрибуты
+//   button.classList.add('menu__btn')
+//   button.setAttribute('aria-expanded', 'false')
+//   button.setAttribute('aria-controls', ariaControlsId)
+
+//   button.innerText = text
+
+//   // Добавляем иконку к кнопке, чтобы визуально было понятно открыто меню или нет
+//   button.innerHTML += icon
+
+//   span.replaceWith(button)
+
+//   button.addEventListener('click', function (e) {
+//     toggleDropdown(button, dropdown)
+//   })
+
+//   // Обрабатываем нажатие на Esc
+//   dropdown.addEventListener('keydown', (e) => {
+//     e.stopImmediatePropagation()
+
+//     if (e.keyCode === 27 && focusIsInside(dropdown)) {
+//       toggleDropdown(button, dropdown)
+//       button.focus()
+//     }
+//   }, false)
+// })
+
+// function toggleDropdown(button, dropdown) {
+//   if (button.getAttribute('aria-expanded') === 'true') {
+//     button.setAttribute('aria-expanded', 'false')
+//     dropdown.setAttribute('hidden', '')
+//   } else {
+//     button.setAttribute('aria-expanded', 'true')
+//     dropdown.removeAttribute('hidden')
+//   }
+// }
+
+// function focusIsInside(element) {
+//   return element.contains(document.activeElement)
+// }
+
+// function collapseDropdownsWhenTabbingOutsideNav(e) {
+//   if (e.keyCode === 9 && !focusIsInside(nav)) {
+//     dropdowns.forEach(function (dropdown) {
+//       dropdown.setAttribute('hidden', '')
+//       const btn = dropdown.parentNode.querySelector('button')
+//       btn.setAttribute('aria-expanded', 'false')
+//     })
+//   }
+// }
+
+// function collapseDropdownsWhenClickingOutsideNav(e) {
+//   const target = e.target
+
+//   dropdowns.forEach(function (dropdown) {
+//     if (!dropdown.parentNode.contains(target)) {
+//       dropdown.setAttribute('hidden', '')
+//       const btn = dropdown.parentNode.querySelector('button')
+//       btn.setAttribute('aria-expanded', 'false')
+//     }
+//   })
+// }
+
+// // Закрываем навигацию, если протапались за её пределы
+// document.addEventListener('keyup', collapseDropdownsWhenTabbingOutsideNav)
+
+// // Закрываем навигацию, если кликнули вне навигации
+// window.addEventListener('click', collapseDropdownsWhenClickingOutsideNav)
+
+document.addEventListener('DOMContentLoaded', () => {
+  /*
+    1. по клику на пункты верхнего меню открывать дропдаун
+    2. по клику (повторному) на эти пункты - закрывать дропдаун
+    3. по клику в любое место сайта, кроме меню - закрывать дропдаун
+  */
+
+  const menuBtns = document.querySelectorAll('.menu__btn');
+  const drops = document.querySelectorAll('.dropdown');
+  menuBtns.forEach(el => {
+    el.addEventListener('click', e => {
+      let currentBtn = e.currentTarget;
+      let drop = currentBtn.closest('.menu__item').querySelector('.dropdown');
+      menuBtns.forEach(el => {
+        if (el !== currentBtn) {
+          el.classList.remove('menu__btn--active');
+        }
+      });
+      drops.forEach(el => {
+        if (el !== drop) {
+          el.classList.remove('dropdown--active');
+        }
+      });
+      drop.classList.toggle('dropdown--active');
+      currentBtn.classList.toggle('menu__btn--active');
     });
-  }
-}
-function collapseDropdownsWhenClickingOutsideNav(e) {
-  const target = e.target;
-  dropdowns.forEach(function (dropdown) {
-    if (!dropdown.parentNode.contains(target)) {
-      dropdown.setAttribute('hidden', '');
-      const btn = dropdown.parentNode.querySelector('button');
-      btn.setAttribute('aria-expanded', 'false');
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.menu')) {
+      menuBtns.forEach(el => {
+        el.classList.remove('menu__btn--active');
+      });
+      drops.forEach(el => {
+        el.classList.remove('dropdown--active');
+      });
     }
   });
-}
+});
 
-// Закрываем навигацию, если протапались за её пределы
-document.addEventListener('keyup', collapseDropdownsWhenTabbingOutsideNav);
+// const btnBurger = document.querySelector('.btn-reset.burger');
+// const menu = document.querySelector('[data-menu]');
+// const header = document.querySelector('.header');
 
-// Закрываем навигацию, если кликнули вне навигации
-window.addEventListener('click', collapseDropdownsWhenClickingOutsideNav);
+// btnBurger.addEventListener('click', () => {
+//   btnBurger.classList.toggle('burger--active');
+//   menu.classList.toggle('menu--active');
+//   header.classList.toggle('header--rel');
+// });
 
 /***/ }),
 
@@ -12577,6 +12639,9 @@ if (swipersAbouts) {
       768: {
         slidesPerView: 3
       },
+      576: {
+        slidesPerView: 2
+      },
       1024: {
         slidesPerView: 4.5
       }
@@ -12634,28 +12699,34 @@ if (swipersTeamDirections) {
     slidesPerView: 1,
     spaceBetween: 20,
     // loop: true,
-    grid: {
-      rows: 2,
-      fill: "row"
-    },
+    // grid: {
+    //   rows: 2,
+    //   fill: "row",
+    // },
+
     pagination: {
       el: '.team-direction__slider-pagination'
     },
-    breakpoints: {
-      // when window width is >= 320px
-      320: {
-        grid: false
-      },
-      768: {
-        grid: {
-          rows: 2,
-          fill: "row"
-        }
-      }
-      // 1024: {
-      //   slidesPerView: 4,
-      // },
+    navigation: {
+      nextEl: '.hero__slider-next',
+      prevEl: '.hero__slider-prev'
     }
+
+    // breakpoints: {
+    //   // when window width is >= 320px
+    //   320: {
+    //     grid:false,
+    //   },
+    //   768: {
+    //     grid: {
+    //       rows: 2,
+    //       fill: "row",
+    //     },
+    //   },
+    //   // 1024: {
+    //   //   slidesPerView: 4,
+    //   // },
+    // }
   });
 }
 ;
@@ -12687,11 +12758,15 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     }
   };
-  resizableSwiper('(max-width: 1024px)', '.gallery__slider', {
+  resizableSwiper('(max-width: 768px)', '.gallery__slider', {
     loop: true,
     spaceBetween: 10,
     slidesPerView: 1,
-    freeMode: true
+    freeMode: true,
+    navigation: {
+      nextEl: '.hero__slider-next',
+      prevEl: '.hero__slider-prev'
+    }
   });
 });
 
@@ -12833,14 +12908,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_enable_scroll_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/enable-scroll.js */ "./src/js/functions/enable-scroll.js");
 
 
+
+// (function(){
+//   const burger = document?.querySelector('[data-burger]');
+//   const menu = document?.querySelector('[data-menu]');
+//   const menuItems = document?.querySelectorAll('[data-menu-item]');
+//   const overlay = document?.querySelector('[data-menu-overlay]');
+
+//   burger?.addEventListener('click', (e) => {
+//     burger?.classList.toggle('burger--active');
+//     menu?.classList.toggle('menu--active');
+
+//     if (menu?.classList.contains('menu--active')) {
+//       burger?.setAttribute('aria-expanded', 'true');
+//       burger?.setAttribute('aria-label', 'Закрыть меню');
+//       disableScroll();
+//     } else {
+//       burger?.setAttribute('aria-expanded', 'false');
+//       burger?.setAttribute('aria-label', 'Открыть меню');
+//       enableScroll();
+//     }
+//   });
+
+//   overlay?.addEventListener('click', () => {
+//     burger?.setAttribute('aria-expanded', 'false');
+//     burger?.setAttribute('aria-label', 'Открыть меню');
+//     burger.classList.remove('burger--active');
+//     menu.classList.remove('menu--active');
+//     enableScroll();
+//   });
+
+//   menuItems?.forEach(el => {
+//     el.addEventListener('click', () => {
+//       burger?.setAttribute('aria-expanded', 'false');
+//       burger?.setAttribute('aria-label', 'Открыть меню');
+//       burger.classList.remove('burger--active');
+//       menu.classList.remove('menu--active');
+//       enableScroll();
+//     });
+//   });
+// })();
+
 (function () {
   const burger = document?.querySelector('[data-burger]');
   const menu = document?.querySelector('[data-menu]');
   const menuItems = document?.querySelectorAll('[data-menu-item]');
   const overlay = document?.querySelector('[data-menu-overlay]');
+  const header = document.querySelector('.header');
   burger?.addEventListener('click', e => {
     burger?.classList.toggle('burger--active');
     menu?.classList.toggle('menu--active');
+    header.classList.toggle('header--rel');
     if (menu?.classList.contains('menu--active')) {
       burger?.setAttribute('aria-expanded', 'true');
       burger?.setAttribute('aria-label', 'Закрыть меню');
@@ -12856,6 +12974,7 @@ __webpack_require__.r(__webpack_exports__);
     burger?.setAttribute('aria-label', 'Открыть меню');
     burger.classList.remove('burger--active');
     menu.classList.remove('menu--active');
+    header.classList.remove('header--rel');
     (0,_functions_enable_scroll_js__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
   });
   menuItems?.forEach(el => {
@@ -12864,6 +12983,7 @@ __webpack_require__.r(__webpack_exports__);
       burger?.setAttribute('aria-label', 'Открыть меню');
       burger.classList.remove('burger--active');
       menu.classList.remove('menu--active');
+      header.classList.remove('header--rel');
       (0,_functions_enable_scroll_js__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
     });
   });
