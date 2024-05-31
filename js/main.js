@@ -12802,16 +12802,19 @@ if (document.querySelector('.tabs')) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var transfer_elements__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! transfer-elements */ "./node_modules/transfer-elements/dist/transfer-elements.esm.min.js");
 
-const teamDirection = document.querySelector('.team-direction__name');
-if (teamDirection) {
-  new transfer_elements__WEBPACK_IMPORTED_MODULE_0__["default"]({
-    sourceElement: teamDirection,
-    breakpoints: {
-      767.98: {
-        targetElement: document.querySelector('.team-direction__img'),
-        targetPosition: 1
+const teamDirections = document.querySelectorAll('.team-direction__name');
+const teamDirectionImgs = document.querySelectorAll('.team-direction__img');
+if (teamDirections.length > 0 && teamDirectionImgs.length > 0) {
+  teamDirections.forEach((teamDirection, index) => {
+    new transfer_elements__WEBPACK_IMPORTED_MODULE_0__["default"]({
+      sourceElement: teamDirection,
+      breakpoints: {
+        767.98: {
+          targetElement: teamDirectionImgs[index],
+          targetPosition: 1
+        }
       }
-    }
+    });
   });
 }
 
