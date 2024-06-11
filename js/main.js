@@ -12336,194 +12336,7 @@ if (document.querySelector('#map1')) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-// const nav = document.querySelector('.site-nav');
-// nav.classList.add('enhanced');
-
-// const submenus = document.querySelectorAll('.menu__item[data-has-children]');
-// const dropdowns = document.querySelectorAll('.menu__item[data-has-children] > .menu');
-
 const icon = '<svg>...</svg>';
-
-// // Находим подменю, заменяем в нём span на кнопку
-// submenus.forEach((item) => {
-//   const dropdown = item.querySelector(':scope > .menu');
-//   dropdown.setAttribute('hidden', '');
-
-//   const button = item.querySelector(':scope > button');
-//   if (button) {
-//     const text = button.textContent;
-//     const ariaControlsId = button.getAttribute('aria-controls');
-
-//     // Добавляем класс и необходимые aria-атрибуты
-//     button.classList.add('menu__btn');
-//     button.setAttribute('aria-expanded', 'false');
-//     button.setAttribute('aria-controls', ariaControlsId);
-
-//     // Добавляем иконку к кнопке, чтобы визуально было
-//     // понятно открыто меню или нет
-//     button.innerHTML += icon;
-
-//     button.addEventListener('click', function (e) {
-//       toggleDropdown(button, dropdown);
-//     });
-
-//     // Обрабатываем нажатие на Esc
-//     dropdown.addEventListener('keydown', (e) => {
-//       e.stopImmediatePropagation();
-
-//       if (e.keyCode === 27 && focusIsInside(dropdown)) {
-//         toggleDropdown(button, dropdown);
-//         button.focus();
-//       }
-//     }, false);
-//   }
-// });
-
-// function toggleDropdown(button, dropdown) {
-//   if (button.getAttribute('aria-expanded') === 'true') {
-//     button.setAttribute('aria-expanded', 'false');
-//     dropdown.setAttribute('hidden', '');
-//   } else {
-//     button.setAttribute('aria-expanded', 'true');
-//     dropdown.removeAttribute('hidden');
-//   }
-// }
-
-// function focusIsInside(element) {
-//   return element.contains(document.activeElement);
-// }
-
-// function collapseDropdownsWhenTabbingOutsideNav(e) {
-//   if (e.keyCode === 9 && !focusIsInside(nav)) {
-//     dropdowns.forEach(function (dropdown) {
-//       dropdown.setAttribute('hidden', '');
-//       const btn = dropdown.parentNode.querySelector('button');
-//       btn.setAttribute('aria-expanded', 'false');
-//     });
-//   }
-// }
-
-// function collapseDropdownsWhenClickingOutsideNav(e) {
-//   const target = e.target;
-
-//   dropdowns.forEach(function (dropdown) {
-//     if (!dropdown.parentNode.contains(target)) {
-//       dropdown.setAttribute('hidden', '');
-//       const btn = dropdown.parentNode.querySelector('button');
-//       btn.setAttribute('aria-expanded', 'false');
-//     }
-//   });
-// }
-
-// // Закрываем навигацию, если протапались за её пределы
-// document.addEventListener('keyup', collapseDropdownsWhenTabbingOutsideNav);
-
-// // Закрываем навигацию, если кликнули вне навигации
-// window.addEventListener('click', collapseDropdownsWhenClickingOutsideNav);
-
-// Следуем принципам прогрессивного улучшения.
-// Показываем пользователю простую навигацию в случае, если не удаётся загрузить JavaScript.
-// Если JavaScript-файл загружен, заменяем span на кнопки и вешаем дополнительные ARIA-атрибуты.
-//
-
-// const nav = document.querySelector('.nav')
-// nav.classList.add('enhanced')
-
-// const submenus = document.querySelectorAll('.menu__item[data-has-children]')
-// const dropdowns = document.querySelectorAll('.menu__item[data-has-children] > .menu')
-
-// const icon = `
-//   <svg
-//     width="24px"
-//     height="24px"
-//     viewBox="0 0 24 24"
-//     aria-hidden="true"
-//     class="menu__btn-icon"
-//   >
-//   <path fill="currentColor" d="M5.64645 8.64645c.19526-.19527.51184-.19527.7071 0L12 14.2929l5.6464-5.64645c.1953-.19527.5119-.19527.7072 0 .1952.19526.1952.51184 0 .7071L12 15.7071 5.64645 9.35355c-.19527-.19526-.19527-.51184 0-.7071Z"></path>
-//   </svg>
-// `
-
-// // Находим подменю, заменяем в нём span на кнопку
-// submenus.forEach((item) => {
-//   const dropdown = item.querySelector(':scope > .menu')
-//   dropdown.setAttribute('hidden', '')
-
-//   const span = item.querySelector(':scope > span')
-//   const text = span.innerText
-//   const ariaControlsId = span.dataset.controls
-
-//   const button = document.createElement('button')
-
-//   // Добавляем класс и необходимые ARIA-атрибуты
-//   button.classList.add('menu__btn')
-//   button.setAttribute('aria-expanded', 'false')
-//   button.setAttribute('aria-controls', ariaControlsId)
-
-//   button.innerText = text
-
-//   // Добавляем иконку к кнопке, чтобы визуально было понятно открыто меню или нет
-//   button.innerHTML += icon
-
-//   span.replaceWith(button)
-
-//   button.addEventListener('click', function (e) {
-//     toggleDropdown(button, dropdown)
-//   })
-
-//   // Обрабатываем нажатие на Esc
-//   dropdown.addEventListener('keydown', (e) => {
-//     e.stopImmediatePropagation()
-
-//     if (e.keyCode === 27 && focusIsInside(dropdown)) {
-//       toggleDropdown(button, dropdown)
-//       button.focus()
-//     }
-//   }, false)
-// })
-
-// function toggleDropdown(button, dropdown) {
-//   if (button.getAttribute('aria-expanded') === 'true') {
-//     button.setAttribute('aria-expanded', 'false')
-//     dropdown.setAttribute('hidden', '')
-//   } else {
-//     button.setAttribute('aria-expanded', 'true')
-//     dropdown.removeAttribute('hidden')
-//   }
-// }
-
-// function focusIsInside(element) {
-//   return element.contains(document.activeElement)
-// }
-
-// function collapseDropdownsWhenTabbingOutsideNav(e) {
-//   if (e.keyCode === 9 && !focusIsInside(nav)) {
-//     dropdowns.forEach(function (dropdown) {
-//       dropdown.setAttribute('hidden', '')
-//       const btn = dropdown.parentNode.querySelector('button')
-//       btn.setAttribute('aria-expanded', 'false')
-//     })
-//   }
-// }
-
-// function collapseDropdownsWhenClickingOutsideNav(e) {
-//   const target = e.target
-
-//   dropdowns.forEach(function (dropdown) {
-//     if (!dropdown.parentNode.contains(target)) {
-//       dropdown.setAttribute('hidden', '')
-//       const btn = dropdown.parentNode.querySelector('button')
-//       btn.setAttribute('aria-expanded', 'false')
-//     }
-//   })
-// }
-
-// // Закрываем навигацию, если протапались за её пределы
-// document.addEventListener('keyup', collapseDropdownsWhenTabbingOutsideNav)
-
-// // Закрываем навигацию, если кликнули вне навигации
-// window.addEventListener('click', collapseDropdownsWhenClickingOutsideNav)
-
 document.addEventListener('DOMContentLoaded', () => {
   /*
     1. по клику на пункты верхнего меню открывать дропдаун
@@ -12562,16 +12375,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-// const btnBurger = document.querySelector('.btn-reset.burger');
-// const menu = document.querySelector('[data-menu]');
-// const header = document.querySelector('.header');
-
-// btnBurger.addEventListener('click', () => {
-//   btnBurger.classList.toggle('burger--active');
-//   menu.classList.toggle('menu--active');
-//   header.classList.toggle('header--rel');
-// });
 
 /***/ }),
 
@@ -12783,11 +12586,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var graph_tabs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! graph-tabs */ "./node_modules/graph-tabs/src/graph-tabs.js");
 // Реализация табов
 
-if (document.querySelector('.tabs')) {
+if (document.querySelector('.club')) {
   const tabs = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('club');
-  const tabs1 = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('teams');
-  const tabs2 = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('membership');
-  const tabs3 = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('training');
+}
+if (document.querySelector('.teams')) {
+  const tabs = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('teams');
+}
+if (document.querySelector('.membership')) {
+  const tabs = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('membership');
+}
+if (document.querySelector('.training')) {
+  const tabs = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('training');
 }
 
 /***/ }),
